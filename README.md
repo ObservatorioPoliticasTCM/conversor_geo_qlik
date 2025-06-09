@@ -22,10 +22,17 @@ O script principal `shape-to-kml.py` converte arquivos de forma (shapefile, GeoJ
    - Python 3.x instalado. 
 
 - Crie um ambiente virtual (opcional, mas recomendado):
-  
+
+  No windows, use:
   ```bash
   python -m venv venv
-  source venv/bin/activate  # No Windows, use: venv\Scripts\activate
+  venv\Scripts\activate
+  ```
+  
+  No linux, use:
+  ```bash
+  python -m venv venv
+  source venv/bin/activate
   ```
 
 - Instale as bibliotecas necessárias utilizando o arquivo requirements.txt:
