@@ -50,11 +50,5 @@ O script principal `shape-to-kml.py` converte arquivos de forma (shapefile, GeoJ
    python shape-to-kml.py <caminho_do_arquivo>
    ```
 
-    - **Observação**: A primeira coluna será usada como código identificador, então deve ser uma coluna de valores únicos e sem valores nulos.
-
-4. **Exemplo**:
-
-    Se o número de argumentos for incorreto, o script exibirá a mensagem de uso e sairá:
-
-5. **Saída**:
+4. **Saída**:
     Após a execução, um arquivo KML e um arquivo CSV será gerado na mesma pasta do arquivo de entrada, com o mesmo nome base.
