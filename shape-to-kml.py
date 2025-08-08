@@ -28,7 +28,10 @@ def gdf_to_qlik(gdf:GeoDataFrame,
         .sort_values(order_by)
         .drop(columns='geometry')
         .to_csv(f'{filename}.csv',
-                 index=False)
+                index=False,
+                sep=';',
+                decimal=',',
+                encoding='latin1')
     )
 
 
