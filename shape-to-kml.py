@@ -8,6 +8,7 @@ def gdf_to_qlik(gdf:GeoDataFrame,
                 order_by:str=None) -> None:
     if not order_by:
         order_by = gdf.columns[0]
+    gdf = gdf.sort_values(order_by)
     print(f"Criando a coluna qlik_id")
     qlik_id = [f'p{i}' for i in range(1, gdf.shape[0]+1)]
     gdf.insert(0, "qlik_id", qlik_id)
@@ -15,7 +16,6 @@ def gdf_to_qlik(gdf:GeoDataFrame,
     print(f"Salvando o kml em {filename}.kml")
     (
         gdf
-        .sort_values(order_by)
         .to_crs('wgs84')
         .to_file(f'{filename}.kml',
                  driver='KML',
@@ -25,7 +25,6 @@ def gdf_to_qlik(gdf:GeoDataFrame,
     print(f"Salvando o csv em {filename}.csv")
     (
         gdf
-        .sort_values(order_by)
         .drop(columns='geometry')
         .to_csv(f'{filename}.csv',
                 index=False,
